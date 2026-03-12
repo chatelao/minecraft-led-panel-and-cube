@@ -33,7 +33,7 @@ def hex_to_rgb(hex_color):
 def load_texture(filename):
     """Load a texture from JSON and downsample it to 16x16."""
     print("Loading", filename)
-    with open(filename, 'r') as f:
+    with open('json/' + filename, 'r') as f:
         data = json.load(f)
 
     palette = {k: hex_to_rgb(v) for k, v in data['palette'].items()}
@@ -60,8 +60,8 @@ def display_textures(tex1, tex2, offset_y):
             pixels[get_pixel_index(x + 16, y)] = tex2[y + offset_y][x]
     pixels.show()
 
-# Get all json files in the current directory
-json_files = [f for f in os.listdir('.') if f.endswith('.json')]
+# Get all json files in the json directory
+json_files = [f for f in os.listdir('json') if f.endswith('.json')]
 json_files.sort()
 
 if not json_files:
