@@ -1,6 +1,6 @@
 # Popular Minecraft Textures
 
-This repository contains 20 of the most popular and iconic Minecraft textures, along with their 32x32 color maps in JSON format.
+This repository contains 19 of the most popular and iconic Minecraft textures, along with their 32x32 color maps in JSON format.
 
 ## Texture List
 
@@ -25,7 +25,6 @@ This repository contains 20 of the most popular and iconic Minecraft textures, a
 | Torch | ![Torch](textures/torch.png) | [torch.json](color_maps/torch.json) |
 | Water Bucket | ![Water Bucket](textures/water_bucket.png) | [water_bucket.json](color_maps/water_bucket.json) |
 | Glass | ![Glass](textures/glass.png) | [glass.json](color_maps/glass.json) |
-| Chest | ![Chest](textures/chest.png) | [chest.json](color_maps/chest.json) |
 
 ## JSON Color Map Format
 
