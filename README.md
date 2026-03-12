@@ -8,25 +8,25 @@ You can view an interactive preview of these textures on the [GitHub Pages site]
 
 | Texture Name | Preview | Color Map (JSON) |
 |--------------|---------|------------------|
-| TNT | ![TNT](textures/tnt_side.png) | [tnt_side.json](color_maps/tnt_side.json) |
-| Oak Log | ![Oak Log](textures/oak_log.png) | [oak_log.json](color_maps/oak_log.json) |
-| Stone | ![Stone](textures/stone.png) | [stone.json](color_maps/stone.json) |
-| Diamond | ![Diamond](textures/diamond.png) | [diamond.json](color_maps/diamond.json) |
-| Netherite Ingot | ![Netherite Ingot](textures/netherite_ingot.png) | [netherite_ingot.json](color_maps/netherite_ingot.json) |
-| Grass Block | ![Grass Block](textures/grass_block_top.png) | [grass_block_top.json](color_maps/grass_block_top.json) |
-| Dirt | ![Dirt](textures/dirt.png) | [dirt.json](color_maps/dirt.json) |
-| Cobblestone | ![Cobblestone](textures/cobblestone.png) | [cobblestone.json](color_maps/cobblestone.json) |
-| Oak Planks | ![Oak Planks](textures/oak_planks.png) | [oak_planks.json](color_maps/oak_planks.json) |
-| Crafting Table | ![Crafting Table](textures/crafting_table_top.png) | [crafting_table_top.json](color_maps/crafting_table_top.json) |
-| Iron Ingot | ![Iron Ingot](textures/iron_ingot.png) | [iron_ingot.json](color_maps/iron_ingot.json) |
-| Gold Ingot | ![Gold Ingot](textures/gold_ingot.png) | [gold_ingot.json](color_maps/gold_ingot.json) |
-| Apple | ![Apple](textures/apple.png) | [apple.json](color_maps/apple.json) |
-| Bread | ![Bread](textures/bread.png) | [bread.json](color_maps/bread.json) |
-| Iron Sword | ![Iron Sword](textures/iron_sword.png) | [iron_sword.json](color_maps/iron_sword.json) |
-| Diamond Pickaxe | ![Diamond Pickaxe](textures/diamond_pickaxe.png) | [diamond_pickaxe.json](color_maps/diamond_pickaxe.json) |
-| Torch | ![Torch](textures/torch.png) | [torch.json](color_maps/torch.json) |
-| Water Bucket | ![Water Bucket](textures/water_bucket.png) | [water_bucket.json](color_maps/water_bucket.json) |
-| Glass | ![Glass](textures/glass.png) | [glass.json](color_maps/glass.json) |
+| TNT | ![TNT](svgs/tnt_side.svg) | [tnt_side.json](color_maps/tnt_side.json) |
+| Oak Log | ![Oak Log](svgs/oak_log.svg) | [oak_log.json](color_maps/oak_log.json) |
+| Stone | ![Stone](svgs/stone.svg) | [stone.json](color_maps/stone.json) |
+| Diamond | ![Diamond](svgs/diamond.svg) | [diamond.json](color_maps/diamond.json) |
+| Netherite Ingot | ![Netherite Ingot](svgs/netherite_ingot.svg) | [netherite_ingot.json](color_maps/netherite_ingot.json) |
+| Grass Block | ![Grass Block](svgs/grass_block_top.svg) | [grass_block_top.json](color_maps/grass_block_top.json) |
+| Dirt | ![Dirt](svgs/dirt.svg) | [dirt.json](color_maps/dirt.json) |
+| Cobblestone | ![Cobblestone](svgs/cobblestone.svg) | [cobblestone.json](color_maps/cobblestone.json) |
+| Oak Planks | ![Oak Planks](svgs/oak_planks.svg) | [oak_planks.json](color_maps/oak_planks.json) |
+| Crafting Table | ![Crafting Table](svgs/crafting_table_top.svg) | [crafting_table_top.json](color_maps/crafting_table_top.json) |
+| Iron Ingot | ![Iron Ingot](svgs/iron_ingot.svg) | [iron_ingot.json](color_maps/iron_ingot.json) |
+| Gold Ingot | ![Gold Ingot](svgs/gold_ingot.svg) | [gold_ingot.json](color_maps/gold_ingot.json) |
+| Apple | ![Apple](svgs/apple.svg) | [apple.json](color_maps/apple.json) |
+| Bread | ![Bread](svgs/bread.svg) | [bread.json](color_maps/bread.json) |
+| Iron Sword | ![Iron Sword](svgs/iron_sword.svg) | [iron_sword.json](color_maps/iron_sword.json) |
+| Diamond Pickaxe | ![Diamond Pickaxe](svgs/diamond_pickaxe.svg) | [diamond_pickaxe.json](color_maps/diamond_pickaxe.json) |
+| Torch | ![Torch](svgs/torch.svg) | [torch.json](color_maps/torch.json) |
+| Water Bucket | ![Water Bucket](svgs/water_bucket.svg) | [water_bucket.json](color_maps/water_bucket.json) |
+| Glass | ![Glass](svgs/glass.svg) | [glass.json](color_maps/glass.json) |
 
 ## JSON Color Map Format
 
