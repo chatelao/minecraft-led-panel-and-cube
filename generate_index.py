@@ -1,6 +1,6 @@
 import os
 
-def get_wiki_link(filename):
+def get_wiki_link(base_name):
     # Mapping for special cases
     mapping = {
         'tnt_side': 'TNT',
@@ -16,13 +16,12 @@ def get_wiki_link(filename):
         'water_bucket': 'Water_Bucket'
     }
 
-    name = os.path.splitext(filename)[0]
-    if name in mapping:
-        wiki_name = mapping[name]
+    if base_name in mapping:
+        wiki_name = mapping[base_name]
     else:
-        wiki_name = name.capitalize()
+        wiki_name = base_name.replace('_', ' ').title().replace(' ', '_')
 
-    return f"https://minecraft.fandom.com/wiki/{wiki_name}"
+    return f"https://minecraft.wiki/w/{wiki_name}"
 
 def main():
     svg_dir = 'svgs'
@@ -112,12 +111,12 @@ def main():
             'water_bucket': 'Water Bucket'
         }
         name = display_names.get(base_name, base_name.replace('_', ' ').title())
-        wiki_link = get_wiki_link(svg_file)
+        wiki_link = get_wiki_link(base_name)
         html_content += f"""
         <div class="card">
             <img src="svgs/{svg_file}" alt="{name}">
             <div class="name">{name}</div>
-            <a href="{wiki_link}" target="_blank">View on Fandom Wiki</a>
+            <a href="{wiki_link}" target="_blank">View on Minecraft Wiki</a>
         </div>
 """
 
