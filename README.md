@@ -2,6 +2,8 @@
 
 This repository contains 19 of the most popular and iconic Minecraft textures, along with their 32x32 color maps in JSON format.
 
+You can view an interactive preview of these textures on the [GitHub Pages site](https://chatelao.github.io/minecraft-led-panel-and-cube/).
+
 ## Texture List
 
 | Texture Name | Preview | Color Map (JSON) |
