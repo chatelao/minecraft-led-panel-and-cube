@@ -78,6 +78,7 @@ def main():
             text-decoration: none;
             color: #007bff;
             font-weight: bold;
+            margin: 5px 0;
         }
         .card a:hover {
             text-decoration: underline;
@@ -117,6 +118,7 @@ def main():
             <img src="svgs/{svg_file}" alt="{name}">
             <div class="name">{name}</div>
             <a href="{wiki_link}" target="_blank">View on Minecraft Wiki</a>
+            <a href="paint_by_numbers/{base_name}.pdf" target="_blank">Download Paint by Numbers PDF</a>
         </div>
 """
 
