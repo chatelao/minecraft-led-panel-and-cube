@@ -30,13 +30,16 @@ def draw_paint_by_numbers_page(c, json_filepath):
     base_name = os.path.splitext(os.path.basename(json_filepath))[0]
     title = get_display_name(base_name)
 
-    # Downsample from 32x32 to 16x16
-    pixel_map_16 = []
-    for y in range(0, 32, 2):
-        row = []
-        for x in range(0, 32, 2):
-            row.append(pixel_map_32[y][x])
-        pixel_map_16.append(row)
+    # Use existing 16x16 grid or downsample from 32x32
+    if len(pixel_map_32) == 16:
+        pixel_map_16 = pixel_map_32
+    else:
+        pixel_map_16 = []
+        for y in range(0, 32, 2):
+            row = []
+            for x in range(0, 32, 2):
+                row.append(pixel_map_32[y][x])
+            pixel_map_16.append(row)
 
     width, height = A4
 
@@ -69,10 +72,26 @@ def draw_paint_by_numbers_page(c, json_filepath):
 
             c.rect(x_pos, y_pos, cell_size, cell_size)
 
-            if alias in alias_to_num:
+            if base_name == 'matrix':
+                # Zigzag: bottom-left (0) to top-left (255)
+                # row_from_bottom=0 is the bottom row (y=15), row_from_bottom=15 is the top row (y=0)
+                row_from_bottom = grid_size - 1 - y
+                if row_from_bottom % 2 == 0:
+                    # Even rows from bottom: left to right (0, 1, ..., 15)
+                    num = row_from_bottom * grid_size + x
+                else:
+                    # Odd rows from bottom: right to left (31, 30, ..., 16)
+                    num = row_from_bottom * grid_size + (grid_size - 1 - x)
+                c.drawCentredString(x_pos + cell_size/2.0, y_pos + cell_size/2.0 - 3, str(num))
+            elif alias in alias_to_num:
                 num = alias_to_num[alias]
                 # Center the number in the cell
                 c.drawCentredString(x_pos + cell_size/2.0, y_pos + cell_size/2.0 - 3, str(num))
+
+    # Skip legend for Matrix
+    if base_name == 'matrix':
+        c.showPage()
+        return
 
     # Legend
     legend_start_y = start_y - 1*cm

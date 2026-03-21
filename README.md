@@ -1,6 +1,6 @@
 # Popular Minecraft Textures
 
-This repository contains 19 of the most popular and iconic Minecraft textures, along with their 32x32 color maps in JSON format and "Paint by Numbers" PDFs.
+This repository contains 20 of the most popular and iconic Minecraft textures, along with their 32x32 color maps in JSON format and "Paint by Numbers" PDFs.
 
 You can view an interactive preview of these textures on the [GitHub Pages site](https://chatelao.github.io/minecraft-led-panel-and-cube/).
 
@@ -27,6 +27,7 @@ You can view an interactive preview of these textures on the [GitHub Pages site]
 | Torch | ![Torch](svgs/torch.svg) | [torch.json](color_maps/torch.json) | [torch.pdf](paint_by_numbers/torch.pdf) |
 | Water Bucket | ![Water Bucket](svgs/water_bucket.svg) | [water_bucket.json](color_maps/water_bucket.json) | [water_bucket.pdf](paint_by_numbers/water_bucket.pdf) |
 | Glass | ![Glass](svgs/glass.svg) | [glass.json](color_maps/glass.json) | [glass.pdf](paint_by_numbers/glass.pdf) |
+| Matrix | ![Matrix](svgs/matrix.svg) | [matrix.json](color_maps/matrix.json) | [matrix.pdf](paint_by_numbers/matrix.pdf) |
 
 ## JSON Color Map Format
 

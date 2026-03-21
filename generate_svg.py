@@ -8,15 +8,19 @@ def process_json_to_svg(filepath):
     palette = data['palette']
     pixel_map_32 = data['pixel_map']
 
-    # Downsample from 32x32 to 16x16
-    # The README says: "All textures have been upscaled to 32x32 using nearest-neighbor interpolation"
-    # So we take every second pixel to get back to 16x16.
-    pixel_map_16 = []
-    for y in range(0, 32, 2):
-        row = []
-        for x in range(0, 32, 2):
-            row.append(pixel_map_32[y][x])
-        pixel_map_16.append(row)
+    # Use existing 16x16 grid or downsample from 32x32
+    if len(pixel_map_32) == 16:
+        pixel_map_16 = pixel_map_32
+    else:
+        # Downsample from 32x32 to 16x16
+        # The README says: "All textures have been upscaled to 32x32 using nearest-neighbor interpolation"
+        # So we take every second pixel to get back to 16x16.
+        pixel_map_16 = []
+        for y in range(0, 32, 2):
+            row = []
+            for x in range(0, 32, 2):
+                row.append(pixel_map_32[y][x])
+            pixel_map_16.append(row)
 
     # SVG parameters
     rect_size = 10

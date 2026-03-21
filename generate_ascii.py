@@ -37,6 +37,21 @@ def process_json(filepath):
         lum = get_luminance(rgb)
         alias_to_ascii[alias] = get_ascii_char(lum)
 
+    # Determine the actual grid size (typically 16x16 or 32x32)
+    grid_size = len(pixel_map)
+    # If 32x32, we should downsample to 16x16 for ASCII as well, or keep it consistent.
+    # The user wanted a 16x16 grid for Matrix.
+    # Looking at other files, they seem to be 32x32 in JSON.
+    # Let's see if we should downsample here too.
+    if grid_size == 32:
+        pixel_map_16 = []
+        for y in range(0, 32, 2):
+            row = []
+            for x in range(0, 32, 2):
+                row.append(pixel_map[y][x])
+            pixel_map_16.append(row)
+        pixel_map = pixel_map_16
+
     ascii_rows = []
     for row in pixel_map:
         # Doubling characters horizontally to account for terminal font aspect ratio
