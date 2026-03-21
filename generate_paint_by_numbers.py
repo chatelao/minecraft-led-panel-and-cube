@@ -21,7 +21,7 @@ def get_display_name(base_name):
     }
     return display_names.get(base_name, base_name.replace('_', ' ').title())
 
-def generate_pdf(json_filepath, output_pdf_path):
+def draw_paint_by_numbers_page(c, json_filepath):
     with open(json_filepath, 'r') as f:
         data = json.load(f)
 
@@ -38,7 +38,6 @@ def generate_pdf(json_filepath, output_pdf_path):
             row.append(pixel_map_32[y][x])
         pixel_map_16.append(row)
 
-    c = canvas.Canvas(output_pdf_path, pagesize=A4)
     width, height = A4
 
     # Title
@@ -104,6 +103,16 @@ def generate_pdf(json_filepath, output_pdf_path):
         c.drawString(x_pos + 0.6*cm, y_pos + 0.1*cm, f"{num}: {color_hex}")
 
     c.showPage()
+
+def generate_pdf(json_filepath, output_pdf_path):
+    c = canvas.Canvas(output_pdf_path, pagesize=A4)
+    draw_paint_by_numbers_page(c, json_filepath)
+    c.save()
+
+def generate_unified_pdf(json_filepaths, output_pdf_path):
+    c = canvas.Canvas(output_pdf_path, pagesize=A4)
+    for filepath in json_filepaths:
+        draw_paint_by_numbers_page(c, filepath)
     c.save()
 
 def main():
@@ -111,13 +120,21 @@ def main():
     output_dir = 'paint_by_numbers'
     os.makedirs(output_dir, exist_ok=True)
 
-    for filename in sorted(os.listdir(input_dir)):
-        if filename.endswith('.json'):
-            filepath = os.path.join(input_dir, filename)
-            output_filename = os.path.splitext(filename)[0] + '.pdf'
-            output_path = os.path.join(output_dir, output_filename)
-            generate_pdf(filepath, output_path)
-            print(f"Generated {output_path}")
+    json_files = sorted([f for f in os.listdir(input_dir) if f.endswith('.json')])
+    json_filepaths = []
+
+    for filename in json_files:
+        filepath = os.path.join(input_dir, filename)
+        json_filepaths.append(filepath)
+        output_filename = os.path.splitext(filename)[0] + '.pdf'
+        output_path = os.path.join(output_dir, output_filename)
+        generate_pdf(filepath, output_path)
+        print(f"Generated {output_path}")
+
+    # Generate unified PDF
+    unified_output_path = os.path.join(output_dir, '_heft_malen_nach_zahlen.pdf')
+    generate_unified_pdf(json_filepaths, unified_output_path)
+    print(f"Generated unified PDF: {unified_output_path}")
 
 if __name__ == "__main__":
     main()
