@@ -28,7 +28,27 @@ def get_wiki_link(base_name):
 
 def main():
     svg_dir = 'svgs'
-    svg_files = sorted([f for f in os.listdir(svg_dir) if f.endswith('.svg')])
+
+    # Ordered list of textures
+    texture_order = [
+        'tnt_side', 'diamond_pickaxe', 'crafting_table_top', 'oak_log', 'stone',
+        'diamond', 'netherite_ingot', 'grass_block_top', 'dirt', 'cobblestone',
+        'oak_planks', 'iron_ingot', 'gold_ingot', 'apple', 'bread',
+        'iron_sword', 'torch', 'water_bucket', 'glass', 'matrix'
+    ]
+
+    # Filter and sort according to texture_order
+    svg_files = []
+    for base_name in texture_order:
+        filename = base_name + '.svg'
+        if os.path.exists(os.path.join(svg_dir, filename)):
+            svg_files.append(filename)
+
+    # Add any remaining svg files that were not in the texture_order
+    all_svgs = sorted([f for f in os.listdir(svg_dir) if f.endswith('.svg')])
+    for f in all_svgs:
+        if f not in svg_files:
+            svg_files.append(f)
 
     html_content = """
 <!DOCTYPE html>
