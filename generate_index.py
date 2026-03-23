@@ -16,6 +16,9 @@ def get_wiki_link(base_name):
         'water_bucket': 'Water_Bucket'
     }
 
+    if base_name == 'matrix':
+        return "https://chatelao.github.io/minecraft-led-panel-and-cube/"
+
     if base_name in mapping:
         wiki_name = mapping[base_name]
     else:
@@ -117,7 +120,7 @@ def main():
         <div class="card">
             <img src="svgs/{svg_file}" alt="{name}">
             <div class="name">{name}</div>
-            <a href="{wiki_link}" target="_blank">View on Minecraft Wiki</a>
+            <a href="{wiki_link}" target="_blank">{"View Project Homepage" if base_name == "matrix" else "View on Minecraft Wiki"}</a>
             <a href="paint_by_numbers/{base_name}.pdf" target="_blank">Download Paint by Numbers PDF</a>
         </div>
 """
